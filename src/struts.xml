@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="StrutsProject" extends="struts-default">
+		<!-- 用户登录模块 -->
+			<action name="LoginAction" class="com.action.LoginAction"
+			method="login">
+	 <!--普通用户 -->
+	        <result name="success3">/main3.jsp</result>
+	 <!--管理员 -->     
+	        <result name="success2">/main2.jsp</result>
+	 <!-- 绩效 -->
+	        <result name="success4">/main4.jsp</result>
+		   
+	 <!--领导-->     
+		     <result name="success">/main.jsp</result> 
+			 <result name="fail">/fail.jsp</result>
+		</action>		
+		<!-- 机构管理模块 -->
+	<action name="jigouAction" class="com.action.jigouAction" method="selectjigou">
+	<result name="selectjigou">/xitongguanli/jigou/index.jsp</result>
+		 
+		</action>
+		<action name="addjigou" class="com.action.jigouAction" method="addjigou">
+			<result  name="selectjigou">/xitongguanli/jigou/index.jsp</result>
+ 
+		</action>
+
+		<action name="deletejigou" class="com.action.jigouAction" method="delete">
+			<result name="selectjigou">/xitongguanli/jigou/index.jsp</result>
+ 
+		</action>
+		<action name="updatejigou" class="com.action.jigouAction" method="update">
+			<result  name="selectjigou">/xitongguanli/jigou/index.jsp</result>
+ 
+		</action>
+		 	<!-- 用户管理模块 -->
+		<action name="userAction" class="com.action.userAction"
+			method="selectAll">
+			<result name="success">/xitongguanli/user/index.jsp</result>
+	 
+		</action>
+			 <action name="updateuser" class="com.action.userAction"
+		 	method="update">
+		 	<result name="success">/xitongguanli/user/index.jsp</result>
+		 
+		 </action>
+		<action name="adduser" class="com.action.userAction"
+			method="adduser">
+			<result name="success">/xitongguanli/user/index.jsp</result>
+ 
+		</action>
+		  <action name="deleteuser" class="com.action.userAction"
+		 	method="delete">
+		 	<result name="success">/xitongguanli/user/index.jsp</result>
+		     
+		  </action>
+		  <!-- 用户个人管理模块 -->
+		  		 <action name="oneupdate" class="com.action.userAction"
+		 	method="oneupdate">
+		 	<result name="success">/success.jsp</result>
+		 
+		 </action>
+		  
+				 <!-- 岗位管理模块 -->
+		
+		
+		<action name="jobAction" class="com.action.jobAction"
+		    method="getalljob">
+		    <result name="getalljob">/xitongguanli/job/index.jsp</result>
+           
+        </action>	
+        <action name="getonejob" class="com.action.jobAction"
+		    method="getonejob">
+		    <result name="getonejob">/xitongguanli/job/editjob.jsp</result>
+           
+        </action>	
+        <action name="addjob" class="com.action.jobAction"
+		 	method="addjob">
+		 	 <result name="getalljob">/xitongguanli/job/index.jsp</result>
+          </action>
+       <action name="deletejob" class="com.action.jobAction"
+		 	method="delete">
+		 <result name="getalljob">/xitongguanli/job/index.jsp</result>
+		 </action>
+		 <action name="updatejob" class="com.action.jobAction"
+		 	method="update">
+		 	<result name="getalljob">/xitongguanli/job/index.jsp</result>
+		 	 
+		 	</action>
+		 <action name="selectjob" class="com.action.jobAction"
+		 	method="selectjob">
+		 	 <result name="selectjob">/xitongguanli/user/update.jsp</result>
+          </action>
+		 	 
+		 	<!-- <action name="selectalljigou" class="com.action.jobAction"
+		 	method="selectalljigou">
+		 	 <result name="selectalljigou">/xitongguanli/job/editjob.jsp</result>
+          </action>
+		 	action name="addalljigou" class="com.action.jobAction"
+		 	method="addalljigou">
+		 	 <result name="addalljigou">/xitongguanli/job/addjob.jsp</result>
+          </action>-->
+		 		 <action name="addselectjob" class="com.action.jobAction"
+		 	method="addselectjob">
+		 	 <result name="addselectjob">/xitongguanli/user/adduser.jsp</result>
+          </action>
+		 <!-- 角色管理模块 -->
+		 <action name="roleAction" class="com.action.roleAction"
+		    method="selectrole">
+		    <result name="success">/xitongguanli/role/index.jsp</result>
+            <result name="fail">/xitongguanli/role/index.jsp</result>
+        </action>
+        <action name="delete" class="com.action.roleAction"
+		 	method="delete">
+		 	<result name="success">/xitongguanli/role/index.jsp</result>
+		    <result name="fail">/xitongguanli/role/index.jsp</result>	
+		 </action>
+		 <action name="update" class="com.action.roleAction"
+		 	method="update">
+		 	<result name="success">/xitongguanli/role/index.jsp</result>
+		    <result name="fail">/xitongguanli/role/index.jsp</result>	
+		 </action>
+		 <action name="addrole" class="com.action.roleAction"
+		 	method="addrole">
+		 	<result name="success">/xitongguanli/role/index.jsp</result>
+		    <result name="fail">/xitongguanli/role/index.jsp</result>	
+		 </action>
+		 	
+		 	              <!--评估等级模块 -->
+
+       <action name="levelAction" class="com.action.levelAction"
+		    method="selectlevel"> 
+		    <result name="selectlevel">/yewuguize/pinggudengji/index.jsp</result>
+     </action>
+   
+		<action name="addlevel" class="com.action.levelAction"
+		 	method="addlevel">
+		 	<result name="selectlevel" >/yewuguize/pinggudengji/index.jsp</result>
+		  
+		 </action>
+		    <action name="deletelevel" class="com.action.levelAction"
+		 	method="delete">
+		 	<result name="selectlevel">/yewuguize/pinggudengji/index.jsp</result>
+		 	</action>
+		 	
+	     <action name="updatelevel" class="com.action.levelAction"
+		 	method="update">
+		 	<result name="selectlevel">/yewuguize/pinggudengji/index.jsp</result>
+		  
+		 </action>
+		 	<!-- 考评方案设置 -->
+		<action name="selectprogram" class="com.program.action.programAction" method="selectprogram">
+			<result name="success">/kaopingliucheng/fanganshezhi/index.jsp</result>
+			<result name="fail">/kaopingliucheng/fanganshezhi/index.jsp</result>
+		</action>
+		
+			 	
+		<action name="addprogram" class="com.program.action.programAction" method="addprogram">
+			<result name="success">/kaopingliucheng/fanganshezhi/index.jsp</result>
+	
+		</action>
+			
+			
+		
+		
+			<!-- 开启考评方案 -->
+			<action name="openprogram" class="com.program.action.programAction" method="openprogram">
+			
+			<result name="success">/kaopingliucheng/fanganshezhi/index.jsp</result>
+			<result name="fail">/kaopingliucheng/fanganshezhi/index.jsp</result>
+		</action>
+		
+		
+				
+		<!-- 考评方案类型 -->
+			<action name="programtypeAction" class="com.program.action.programtypeAction" method="getalltype">
+			<result name="getalltype">/kaopingliucheng/fanganshezhi/type.jsp</result>
+ 
+		</action>
+			<action name="gettype" class="com.program.action.programtypeAction" method="gettype">
+			<result name="gettype">yewuguize/toupiaoxiang/update.jsp</result>
+  
+			</action>
+			<action name="addgettype" class="com.program.action.programtypeAction" method="addgettype">
+			<result name="addgettype">yewuguize/toupiaoxiang/addvote.jsp</result>
+ 
+		</action>
+		<!-- 确定考评对象 -->
+			 <action name="selectKpdx" class="com.program.action.kpdxAction"
+		 	method="selectAll">
+		 	<result name="success">/kaopingliucheng/kaopingduixiang/default.jsp</result>
+		 	<result name="false">/kaopingliucheng/kaopingduixiang/BMselect.jsp</result>
+		 </action>		
+		 <action name="select" class="com.program.action.kpdxAction"
+		 	method="select">
+		 	<result name="success">/kaopingliucheng/kaopingduixiang/objectset.jsp</result>
+		 	<result name="false">/kaopingliucheng/kaopingduixiang/BMadd.jsp</result>
+		 </action>		
+		 <action name="deleteKpdx" class="com.program.action.kpdxAction"
+		 	method="delete">
+		 	<result name="success">/kaopingliucheng/kaopingduixiang/default.jsp</result>
+		 	<result name="false">/kaopingliucheng/kaopingduixiang/BMselect.jsp</result>
+		 </action>		
+		  <action name="addkpdx" class="com.program.action.kpdxAction"
+		 	method="add">
+		 	<result name="success">/kaopingliucheng/kaopingduixiang/default.jsp</result>
+		 	<result name="false">/kaopingliucheng/kaopingduixiang/BMselect.jsp</result>		 	
+		 </action>	
+		 
+		
+					
+		<!-- 方案周期设置 -->
+			<action name="selectCycle" class="com.program.action.cycleAction"
+		 	method="selectCycle">
+		 		<result name="success">/kaopingliucheng/pingguzhouqi/cycle.jsp</result>
+			</action>
+		 	<action name="addCycle" class="com.program.action.cycleAction"
+		 	method="addCycle">
+		 		<result name="success">/kaopingliucheng/pingguzhouqi/cycle.jsp</result>
+		 	</action>		
+		 	<action name="updateCycle" class="com.program.action.cycleAction"
+		 	method="update">
+		 		<result name="success">/kaopingliucheng/pingguzhouqi/cycle2.jsp</result>
+		 	</action>
+		 	<action name="deleteCycle" class="com.program.action.cycleAction"
+		 	method="deleteCycle">
+		 		<result name="success">/kaopingliucheng/pingguzhouqi/cycle.jsp</result>
+		 	</action>					
+		
+		
+		 <!--投票项模块 -->
+          
+       <action name="voteAction" class="com.action.voteAction"
+		    method="selectvote"> 
+		    <result name="success">/yewuguize/toupiaoxiang/index.jsp</result>
+      </action>      
+ 	  <action name="addvote" class="com.action.voteAction"
+		    method="addvote"> 
+		    <result name="success">/yewuguize/toupiaoxiang/index.jsp</result>
+      </action> 
+      	 <action name="deletevote" class="com.action.voteAction"
+		    method="delete"> 
+		    <result name="success">/yewuguize/toupiaoxiang/index.jsp</result>
+     </action> 
+           	 <action name="updatevote" class="com.action.voteAction"
+		    method="update"> 
+		    <result name="success">/yewuguize/toupiaoxiang/index.jsp</result>
+     </action> 	
+     
+     
+     
+     <!-- 4.2开始与结束评估 -->
+		
+			<action name="selectopenprogram" class="com.program.action.programAction" method="selectopenprogram">		
+		
+		      <result name="selectopenprogram">/kaopingliucheng/kaishipinggu/openprogramList.jsp</result>
+		</action>
+     
+     
+     
+     <action name="showCycle" class="com.program.action.cycleAction" method="showCycle">		
+		
+		      <result name="showCycle">/kaopingliucheng/kaishipinggu/openCycle.jsp</result>
+		</action>
+		
+		
+		
+      <action name="openCycle" class="com.program.action.cycleAction" method="openCycle">		
+		
+		      <result name="showCycle">/kaopingliucheng/kaishipinggu/openCycle2.jsp</result>
+		</action>
+   
+      <!--评估打分模块 -->
+	<action name="programjigouAction" class="com.test.action.programjigouAction" method="dafen">
+			<result name="success">/kaopingliucheng/pinggudafen/jigou.jsp</result>
+ 
+			<result name="false">/kaopingliucheng/pinggudafen/user.jsp</result>
+		 
+		</action> 
+	
+
+		  		<action name="userscoreAction" class="com.test.action.userscoreAction" method="vote">
+			<result name="success">/kaopingliucheng/pinggudafen/userscore.jsp</result>
+		 
+		</action> 
+				<action name="jigouscoreAction" class="com.test.action.jigouscoreAction" method="vote">
+			<result name="success">/kaopingliucheng/pinggudafen/jigouscore.jsp</result>
+		 
+		</action> 
+					<action name="getallprogram" class="com.test.action.programjigouAction" method="getallprogram">
+			<result name="success">/kaopingliucheng/pinggudafen/choice.jsp</result>
+		 
+		</action>
+		
+
+			<action name="addnumber" class="com.test.action.addnumber" method="addnumber">
+			<result name="success">/kaopingliucheng/pinggudafen/userscore2.jsp</result>
+		</action>
+				<action name="jigouscore" class="com.test.action.programjigouAction" method="jigouscore">
+			<result name="success">/kaopingliucheng/pinggudafen/jigouscore2.jsp</result>
+		</action>
+		<action name="selectstage" class="com.test.action.stageAction" method="selectstage">
+			<result name="success">/kaopingliucheng/pinggudafen/gradexz.jsp</result>		
+		</action>
+
+ 
+		<!-- 评估结果 -->
+	 	<action name="pgjgAction" class="com.test.action.pgjgAction" method="selectAll">
+			<result name="success">/statistics/scorelist1.jsp</result>
+			<result name="false">/statistics/scan.jsp</result>
+		</action> 
+		<action name="qwer" class="com.test.action.programjigouAction" method="getallprogram">
+			<result name="success">/statistics/tab.jsp</result>
+		</action>
+		<action name="asdf" class="com.test.action.stageAction" method="selectstage">
+			<result name="success">/statistics/scorelist.jsp</result>		
+		</action>
+		
+ 
+	</package>
+</struts>
+
