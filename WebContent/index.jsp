@@ -180,9 +180,9 @@ img#logo {
 </style>
 <body>
 	<div class="ribbon">
-		<a href='http://39.106.142.139:8080/LovePro/index.jsp'><span>秦</span></a> 
-		<a href='http://39.106.142.139:8080/LovePro/lovehome.jsp'><span>梦</span></a>
-		<a href='http://39.106.142.139:8080/LovePro/letter.jsp'><span>螺</span></a>
+		<a href='http://localhost:8080/LovePro/index.jsp'><span>秦</span></a> 
+		<a href='http://localhost:8080/LovePro/lovehome.jsp'><span>梦</span></a>
+		<a href='http://localhost:8080/LovePro/letter.jsp'><span>螺</span></a>
 	</div>
 	<span>&nbsp;</span>
 	
